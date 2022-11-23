@@ -1,0 +1,16 @@
+import { describe, expect, test } from "@jest/globals"
+
+import { taskA, taskB } from "./index"
+
+describe("Tasks for 2015 04", () => {
+  const dataACase1 = "abcdef"
+  const dataACase2 = "pqrstuv"
+  test("Task A", async () => {
+    expect(await taskA(dataACase1)).toBe(609043)
+    expect(await taskA(dataACase2)).toBe(1048970)
+  })
+
+  test("Task B", async () => {
+    expect(await taskB("")).toBe(0)
+  })
+})
