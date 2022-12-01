@@ -37,11 +37,13 @@ async function taskB(input: string): Promise<number> {
     },
     new Array<number>()
   )
-  const sorted = caloryCount.sort((a: number, b: number) => b - a).slice(0, 3)
-  const result = sorted.reduce((total: number, calories: number) => {
-    total += calories
-    return total
-  }, 0)
+  const result = caloryCount
+    .sort((a: number, b: number) => b - a)
+    .slice(0, 3)
+    .reduce((total: number, calories: number) => {
+      total += calories
+      return total
+    }, 0)
 
   return result
 }
