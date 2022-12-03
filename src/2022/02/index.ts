@@ -59,13 +59,13 @@ async function taskB(input: string): Promise<number> {
     ["scissors", 3],
   ])
 
-  const losesTo: Map<string, string> = new Map<string, string>([
+  const winsTo: Map<string, string> = new Map<string, string>([
     ["rock", "paper"],
     ["paper", "scissors"],
     ["scissors", "rock"],
   ])
 
-  const winsTo: Map<string, string> = new Map<string, string>([
+  const losesTo: Map<string, string> = new Map<string, string>([
     ["rock", "scissors"],
     ["paper", "rock"],
     ["scissors", "paper"],
@@ -82,10 +82,10 @@ async function taskB(input: string): Promise<number> {
     } else {
       const move = opponentMoves.get(opponent).move
       if (player === "X") {
-        const counterMove = winsTo.get(move)
+        const counterMove = losesTo.get(move)
         return playerMoves.get(counterMove)
       } else if (player === "Z") {
-        const counterMove = losesTo.get(move)
+        const counterMove = winsTo.get(move)
         return winPoints + playerMoves.get(counterMove)
       }
     }
