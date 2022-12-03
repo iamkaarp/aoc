@@ -50,7 +50,7 @@ function match(first: string, second: string): Set<string> {
 }
 
 function convertCharToNumber(char: string): number {
-  let out = (char.charCodeAt(0) - 64) * Math.pow(26, 0)
+  let out = char.charCodeAt(0) - 64
   return char === char.toUpperCase() ? out + 26 : out - 32
 }
 
