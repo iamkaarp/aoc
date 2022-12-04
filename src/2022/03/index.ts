@@ -31,8 +31,7 @@ async function taskB(input: string): Promise<number> {
 function matchPerElf(first: string, second: string, third: string) {
   const match: Set<string> = new Set<string>()
   for (let i in Array.from(first)) {
-    Array.from(third).includes(first[i]) &&
-    Array.from(second).includes(first[i])
+    third.includes(first[i]) && second.includes(first[i])
       ? match.add(first[i])
       : false
   }
@@ -43,7 +42,7 @@ function matchPerElf(first: string, second: string, third: string) {
 function match(first: string, second: string): Set<string> {
   const match: Set<string> = new Set<string>()
   for (let i in Array.from(first)) {
-    Array.from(second).includes(first[i]) ? match.add(first[i]) : false
+    second.includes(first[i]) ? match.add(first[i]) : false
   }
 
   return match
